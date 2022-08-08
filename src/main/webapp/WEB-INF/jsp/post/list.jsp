@@ -24,11 +24,9 @@
 	
 		<c:import url="/WEB-INF/jsp/include/header.jsp" />
 		
-		<section>
+		<section class="">
 		
-		
-		
-		
+
 		
 		
 		
