@@ -11,6 +11,14 @@ public class PostController {
 	public String postList() {
 		
 		return "post/list";
+	}
+	
+	
+	// 메모 입력 페이지
+	@GetMapping("/post/create/view")
+	public String postInput() {
+		
+		return "post/create";
 		
 	}
 
