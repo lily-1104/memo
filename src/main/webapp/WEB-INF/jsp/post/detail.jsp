@@ -2,13 +2,12 @@
     pageEncoding="UTF-8"%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>메모 리스트</title>
+<title>메모 작성</title>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	
@@ -27,42 +26,31 @@
 		
 		<section class="d-flex justify-content-center">
 		
-			<div class="col-8 my-4">
+			<div class="col-6 my-4">
 			
-				<h1 class="text-center">메모 리스트</h1>
+				<h1 class="text-center">메모 입력</h1>
 				
-				<table class="table text-center mt-5">
-					<thead>
-						<tr>
-							<th>NO.</th>
-							<th>제목</th>
-							<th>시간</th>
-						</tr>
-					</thead>				
+				<div class="d-flex justify-content-between mt-2">
+					<label>제목</label> 
+					<input type="text" class="form-control col-11" id="titleInput" value="${memo.subject }">
+				</div>
 				
-					<tbody>
-						<c:forEach var="memo" items="${memoList }" >
-						<tr>
-							<td>${memo.id }</td>
-							<td><a href="/post/detail/view?id=${memo.id }">${memo.subject }</a></td>
-							<td><fmt:formatDate value="${memo.createdAt }" pattern="yyyy-MM-dd HH:mm:ss" /></td>
-						</tr>
-						</c:forEach>
-					</tbody>
+				<textarea rows="5" class="form-control mt-2" id="contentInput">${memo.content }</textarea>
+				
+				<div class="d-flex justify-content-between mt-3">
+					<div>
+						<a href="/post/list/view" class="btn btn-info">목록으로</a>
+						<button type="button" class="btn btn-danger">삭제</button>
+					</div>
 					
-				</table>
-				
-				<div class="text-right">
-					<a href="/post/create/view" class="btn btn-success mt-3">글쓰기</a>
+					<button type="button" class="btn btn-info" id="saveBtn">수정</button>
 				</div>
 			
 			</div>
-		
 		</section>
 		
 		
 		<c:import url="/WEB-INF/jsp/include/footer.jsp" />
-	
 	
 	</div>
 

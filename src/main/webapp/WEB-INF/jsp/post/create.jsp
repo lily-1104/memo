@@ -24,6 +24,7 @@
 	
 		<c:import url="/WEB-INF/jsp/include/header.jsp" />
 		
+		
 		<section class="d-flex justify-content-center">
 		
 			<div class="col-6 my-4">
@@ -32,44 +33,20 @@
 				
 				<div class="d-flex justify-content-between mt-2">
 					<label>제목</label> 
-					<input type="text" class="form-control col-11">
+					<input type="text" class="form-control col-11" id="titleInput">
 				</div>
 				
-				<textarea rows="5" class="form-control mt-2"></textarea>
+				<textarea rows="5" class="form-control mt-2" id="contentInput"></textarea>
 				
 				<input type="file" class="mt-2">
 				
 				<div class="d-flex justify-content-between mt-3">
 					<a href="/post/list/view" class="btn btn-info">목록으로</a>
-					<button type="button" class="btn btn-info">저장</button>
+					<button type="button" class="btn btn-info" id="saveBtn">저장</button>
 				</div>
 			
 			</div>
-
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		</section>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		
 		<c:import url="/WEB-INF/jsp/include/footer.jsp" />
@@ -115,38 +92,11 @@
 						alert("메모 작성 에러");
 					}
 					
-					
-					
 				});
-				
-				
-				
-				
-				
-				
 				
 			});
 			
-			
-			
-			
-			
-			
-			
-			
-			
-			
 		});
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	</script>
