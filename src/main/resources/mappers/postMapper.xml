@@ -6,12 +6,14 @@
 
 <mapper namespace="com.memo.post.dao.PostDAO">
 
+
 	<insert id="insertPost" parameterType="map">
 	
 		INSERT INTO
 			`post`
 		(
-			`subject`
+			`userId`
+			, `subject`
 			, `content`
 			, `createdAt`
 			, `updatedAt`
@@ -19,20 +21,60 @@
 		
 		VALUE
 		(
-			#{title}
+			#{userId}
+			, #{title}
 			, #{content}
 			, now()
 			, now()
 		)
 	
-	
-	
-	
-	
 	</insert>
-
-
-
+	
+	
+	
+	<select id="selectPostList" parameterType="int"
+		resultType="com.memo.post.model.Post">
+			<!--  메소드라서 특징 전부 잡아주기 (parameterType, resultType) -->
+	
+		SELECT
+			`id`
+			, `userId`
+			, `subject`
+			, `content`
+			, `createdAt`
+			, `updatedAt`
+	
+		FROM
+			`post`
+		
+		WHERE
+			`userId` = #{userId}
+		
+		ORDER BY
+			`id` DESC
+	
+	</select>
+	
+	
+	
+	<select id="selectPost" parameterType="int"
+		resultType="com.memo.post.model.Post">
+		
+		SELECT
+			`id`
+			, `userId`
+			, `subject`
+			, `content`
+			, `createdAt`
+			, `updatedAt
+	
+		FROM
+			`post`
+			
+		WHERE
+			`id` = #{id}
+	
+	</select>
 
 
 
