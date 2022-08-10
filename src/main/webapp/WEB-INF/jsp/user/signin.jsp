@@ -27,7 +27,6 @@
 		<form id="loginForm">	<%-- 로그인을 클릭 외에 엔터로도 가능하도록 하기위해 form 태그 사용 --%>
 		<section class="content d-flex justify-content-center">
 		
-			
 			<div class="py-5">
 				<h1 class="text-center">로그인</h1>
 				
