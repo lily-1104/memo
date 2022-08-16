@@ -7,9 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class UserController {
+public class UserController {	// view 만 구성
 	
-	// view 만 구성
 	
 	@GetMapping("/user/signup/view")
 	public String signupView() {
@@ -40,8 +39,6 @@ public class UserController {
 		
 			// redirect:리다이렉트 할 주소
 		return "redirect:/user/signin/view";
-		
-		
 		
 	}
 	

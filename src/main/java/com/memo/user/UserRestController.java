@@ -45,6 +45,7 @@ public class UserRestController {
 	}
 	
 	
+	
 	@PostMapping("/user/signin")
 	public Map<String, String> signIn(
 			@RequestParam("loginId") String loginId
