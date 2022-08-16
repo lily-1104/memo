@@ -30,12 +30,19 @@
 			
 				<h1 class="text-center">메모 입력</h1>
 				
-				<div class="d-flex justify-content-between mt-2">
-					<label>제목</label> 
+				<div class="d-flex justify-content-between align-items-center mt-4">
+					<label><b>제목</b></label> 
 					<input type="text" class="form-control col-11" id="titleInput" value="${memo.subject }">
 				</div>
 				
-				<textarea rows="5" class="form-control mt-2" id="contentInput">${memo.content }</textarea>
+				<textarea rows="5" class="form-control mt-3" id="contentInput">${memo.content }</textarea>
+				
+				
+					<!-- 이미지 파일 -->
+				<div class="mt-3">
+					<img class="w-100" src="${memo.imagePath }">
+				</div>
+				
 				
 				<div class="d-flex justify-content-between mt-3">
 					<div>

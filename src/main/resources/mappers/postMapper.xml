@@ -15,15 +15,17 @@
 			`userId`
 			, `subject`
 			, `content`
+			, `imagePath`
 			, `createdAt`
 			, `updatedAt`
 		)
 		
 		VALUE
-		(
-			#{userId}
+		(	<!-- 저장할 값 -->
+			#{userId}	
 			, #{title}
 			, #{content}
+			, #{imagePath}
 			, now()
 			, now()
 		)
@@ -41,6 +43,7 @@
 			, `userId`
 			, `subject`
 			, `content`
+			, `imagePath`
 			, `createdAt`
 			, `updatedAt`
 	
@@ -65,8 +68,9 @@
 			, `userId`
 			, `subject`
 			, `content`
+			, `imagePath`
 			, `createdAt`
-			, `updatedAt
+			, `updatedAt`
 	
 		FROM
 			`post`
