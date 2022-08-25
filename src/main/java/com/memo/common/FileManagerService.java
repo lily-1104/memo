@@ -14,7 +14,7 @@ public class FileManagerService {
 
 		
 	// 멤버 변수로 밖으로 빼기
-	public static final String FILE_UPLOAD_PATH = "C:\\Users\\User\\Desktop\\개발\\Spring\\Project\\memo\\upload/";  
+	public static final String FILE_UPLOAD_PATH = "C:\\Users\\User\\Desktop\\개발\\Spring\\Project\\image file\\memo\\upload/";  
 				// 파일을 어디에 저장할지 폴더 경로 설정, 경로 맨 뒤에 슬래시 붙여주기 ★★
 				// static : 객체 생성 없이 가능
 	
