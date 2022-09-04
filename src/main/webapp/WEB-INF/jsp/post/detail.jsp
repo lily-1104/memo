@@ -47,10 +47,10 @@
 				<div class="d-flex justify-content-between mt-3">
 					<div>
 						<a href="/post/list/view" class="btn btn-info">목록으로</a>
-						<button type="button" class="btn btn-danger">삭제</button>
+						<button type="button" class="btn btn-danger" id="deleteBtn" data-post-id="${memo.id }">삭제</button>
 					</div>
 					
-					<button type="button" class="btn btn-info" id="saveBtn">수정</button>
+					<button type="button" class="btn btn-info" id="saveBtn" data-post-id="${memo.id }">수정</button>
 				</div>
 			
 			</div>
@@ -60,6 +60,79 @@
 		<c:import url="/WEB-INF/jsp/include/footer.jsp" />
 	
 	</div>
+	
+	<script>
+		
+		$(document).ready(function() {
+			
+			// 게시글 삭제
+			$("#deleteBtn").on("click", function() {
+				
+				let postId = $(this).data("post-id");
+				
+				$.ajax({
+					type:"get",
+					url:"/post/delete",
+					data:{"postId":postId},
+					success:function(data) {
+						
+						if(data.result == "success") {
+							location.href="/post/list/view";
+						} else {
+							alert("삭제 실패");
+						}
+					},
+					
+					error:function() {
+						alert("삭제 에러");
+					}
+				});
+				
+			});
+			
+			
+			
+			// 게시글 수정
+			$("#saveBtn").on("click", function() {
+				
+				let title = $("#titleInput").val();
+				let content = $("#contentInput").val().trim();
+				let postId = $(this).data("post-id");
+				
+				if(title == "") {
+					alert("제목을 입력하세요");
+					return;
+				}
+				
+				if(content == "") {
+					alert("내용을 입력하세요");
+					return;
+				}
+				
+				$.ajax({
+					
+					type:"post",
+					url:"/post/update",
+					data:{"postId":postId, "title":title, "content":content},
+					success:function(data) {
+						if(data.result == "success") {
+							location.reload();
+						} else {
+							alert("수정 실패");
+						}
+					},
+					
+					error:function() {
+						alert("수정 에러");
+					}
+					
+				});
+				
+			});
+			
+		});
+	
+	</script>
 
 </body>
 </html>
