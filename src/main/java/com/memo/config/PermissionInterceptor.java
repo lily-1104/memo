@@ -58,7 +58,7 @@ public class PermissionInterceptor implements HandlerInterceptor {
 	public void postHandle(
 			HttpServletRequest request
 			, HttpServletResponse response
-			, Object Handler
+			, Object handler
 			, ModelAndView modelAndView) {
 	}
 	
@@ -69,7 +69,7 @@ public class PermissionInterceptor implements HandlerInterceptor {
 	public void afterCompletion(
 			HttpServletRequest request
 			, HttpServletResponse response
-			, Object object
+			, Object handler
 			, Exception ex) {
 	}
 	
