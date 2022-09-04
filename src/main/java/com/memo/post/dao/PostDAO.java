@@ -21,4 +21,19 @@ public interface PostDAO {
 	
 	
 	public Post selectPost(@Param("id") int id);
+	
+	
+	
+	// 게시글 수정
+	public int updatePost(
+			@Param("postId") int postId
+			, @Param("title") String title
+			, @Param("content") String content);
+	
+	
+	
+	// 게시글 삭제
+	public int deletePost(@Param("postId") int postId);
+	
+	
 }

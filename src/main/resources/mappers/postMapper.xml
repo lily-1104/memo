@@ -79,7 +79,39 @@
 			`id` = #{id}
 	
 	</select>
-
-
-
+	
+	
+	
+		<!-- 게시글 수정 -->
+	
+	<update id="updatePost" parameterType="map">
+		
+		UPDATE
+			`post`
+		
+		 SET
+		 	`subject` = #{title}
+		 	, `content` = #{content}
+		 	, `updatedAt` = now()
+		 
+		 WHERE
+		 	`id` = #{postId}
+	
+	</update>
+	
+	
+	
+		<!-- 게시글 삭제 -->
+	
+	<delete id="deletePost" parameterType="int">
+		
+		DELETE FROM
+			`post`
+		
+		WHERE
+			`id` = #{postId}
+	
+	</delete>
+	
+	
 </mapper>

@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -47,5 +48,48 @@ public class PostRestController {
 		return result;
 		
 	}
-
+	
+	
+	
+	// 게시글 수정
+	@PostMapping("/post/update")
+	public Map<String, String> updatePost(
+			@RequestParam("postId") int postId
+			, @RequestParam("title") String title
+			, @RequestParam("content") String content) {
+		
+		int count = postBO.updatePost(postId, title, content);
+		
+		Map<String, String> map = new HashMap<>();
+		
+		if(count == 1) {
+			map.put("result", "success");
+		} else {
+			map.put("result", "fail");
+		}
+		
+		return map;
+		
+	}
+	
+	
+	
+	// 게시글 삭제
+	@GetMapping("/post/delete")
+	public Map<String, String> deletePost(@RequestParam("postId") int postId) {
+		
+		Map<String, String> map = new HashMap<>();
+		
+		int count = postBO.deletePost(postId);
+		
+		if(count == 1) {
+			map.put("result", "success");
+		} else {
+			map.put("result", "fail");
+		}
+		
+		return map;
+		
+	}
+	
 }
