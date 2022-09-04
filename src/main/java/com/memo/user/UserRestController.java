@@ -63,7 +63,7 @@ public class UserRestController {
 		if(user != null) {
 			map.put("result", "success");
 			
-			HttpSession session  = request.getSession();
+			HttpSession session = request.getSession();
 			
 				// userId, loginId, name 정보 저장
 				// login하면 session에 저장해놓고 그 값은 어떤 페이지에서든 사용 가능

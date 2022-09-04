@@ -17,6 +17,3 @@
 		</c:if>
 		
 	</header>
-
-</body>
-</html>

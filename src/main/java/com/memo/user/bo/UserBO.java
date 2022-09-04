@@ -38,15 +38,4 @@ public class UserBO {
 	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 }
