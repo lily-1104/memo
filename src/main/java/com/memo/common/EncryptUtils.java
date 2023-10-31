@@ -6,6 +6,7 @@ import java.security.NoSuchAlgorithmException;
 public class EncryptUtils {
 	
 	// input : 원본 비밀번호 / output : 해싱 비밀번호
+	// security로 임포트
 	public static String md5(String message) {
 		String encData = "";
 		try {

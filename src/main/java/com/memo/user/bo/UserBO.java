@@ -24,6 +24,16 @@ public class UserBO {
 	
 	
 	
+	// 로그인
+	// input : loginId, 해싱된 password / output : UserEntity (null 이거나 entity(채워져있거나))
+	public UserEntity getUserEntityByLoginIdPassword(String loginId, String password) {
+		
+		return userRepository.findByLoginIdAndPassword(loginId, password);
+		
+	}
+	
+	
+	
 	// 회원가입
 	// input : 4개 파라미터 / output : id(pk)
 	public Integer addUser(String loginId, String password, String name, String email) {
@@ -41,6 +51,9 @@ public class UserBO {
 			// userEntity == null : id가 null이면 null로 리턴, null : userEntity.getId() : id가 있으면 id로 리턴
 		
 	}
+	
+	
+	
 	
 	
 	
