@@ -19,7 +19,7 @@
 	
 	<div id="wrap">
 	
-		<header class="bg-info">
+		<header class="bg-light">
 			<jsp:include page="../include/header.jsp" />	<!-- Ctrl 버튼 눌러서 연결 되는지 확인 -->
 					<!-- 상대 경로로 할 거라서 ../ 붙임, 위의 폴더로 올라간다는 뜻 (절대 경로는 맨 앞에 / 붙음 => /WEB-INF 부터 시작) -->
 		</header>
@@ -33,7 +33,7 @@
 		</section>
 	
 		
-		<footer class="bg-primary">
+		<footer class="bg-light">
 			<jsp:include page="../include/footer.jsp" />
 		</footer>
 	
