@@ -16,5 +16,5 @@ public class Post {
 	private String imagePath;
 	private ZonedDateTime createdAt;
 	private ZonedDateTime updatedAt;
-
+	
 }

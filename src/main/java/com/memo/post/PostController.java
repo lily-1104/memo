@@ -22,7 +22,12 @@ public class PostController {
 	private PostBO postBO;
 	
 	
-	// 게시글 리스트
+	/**
+	 * 게시글 리스트
+	 * @param model
+	 * @param session
+	 * @return
+	 */
 	// URL : http://localhost:80/post/post-list-view
 	@GetMapping("/post-list-view")
 	public String postListView(Model model, HttpSession session) {
@@ -44,5 +49,23 @@ public class PostController {
 		return "template/layout";
 		
 	}
+	
+	
+	/**
+	 * 글쓰기 화면
+	 * @param model
+	 * @return
+	 */
+	// URL : http://localhost:80/post/post-create-view
+	@GetMapping("/post-create-view")
+	public String postCreateView(Model model) {
+		
+		model.addAttribute("viewName", "post/postCreate");
+		
+		return "template/layout";
+		
+	}
+	
+	
 
 }
