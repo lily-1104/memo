@@ -26,7 +26,6 @@
 				
 				<%-- btn-block: 로그인 박스 영역에 버튼을 가득 채운다. --%>
 				<input type="submit" id="loginBtn" class="btn btn-block btn-primary" value="로그인">
-				
 				<a class="btn btn-block btn-dark" href="/user/sign-up-view">회원가입</a>
 				
 			</form>
@@ -75,8 +74,7 @@
 					if(data.code == 200) {
 						
 						// 성공 => 글 목록으로 이동
-						location.href = "/post/post-list-view";
-						
+						location.href = "/post/post-list-view"
 					} else {
 						
 						// 로직 실패
@@ -86,7 +84,22 @@
 					
 				});
 				
+				
 			});
+			
+			
+			
+			
+			
+			
+			
 		});
+	
+	
+	
+	
+	
+	
+	
 	
 	</script>

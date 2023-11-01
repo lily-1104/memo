@@ -7,11 +7,11 @@
 	
 	<%-- logo --%>
 	<div>
-		<h2 class="font-weight-bold">MEMO 게시판</h2>
+		<h2 class="font-weight-bold ml-5">MEMO 게시판</h2>
 	</div>
 	
 	<%-- 로그인 정보 --%>
-	<div class="justify-items-end">
+	<div class="justify-items-end mr-4">
 		<c:if test="${not empty userName }">
 			<span>${userName }님 안녕하세요</span>
 			<a href="/user/sign-out">로그아웃</a>

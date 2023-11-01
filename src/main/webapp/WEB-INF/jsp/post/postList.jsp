@@ -6,11 +6,11 @@
 
     <div class="d-flex justify-content-center">
     
-    	<div class="w-50 bg-info">
+    	<div class="w-50">
     	
-    		<h1>글 목록</h1>
+    		<h2 class="mt-4">글 목록</h2>
     		
-    		<table class="table">
+    		<table class="table mt-4">
     			<thead>
     				<tr>
     					<th>NO.</th>
