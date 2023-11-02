@@ -39,7 +39,7 @@
 		$(document).ready(function() {
 			
 			// 로그인
-			$('#signInBtn').on('submit', function(e) {
+			$('#loginForm').on('submit', function(e) {
 				
 				e.preventDefault();
 				
@@ -48,16 +48,16 @@
 				
 				// validation
 				let loginId = $('#loginId').val().trim();
-				let password = #('#password').val().trim();
+				let password = #('#password').val();
 				
 				if (!loginId) {
 					alert("아이디를 입력하세요");
-					return false;
+					return;
 				}
 				
 				if (!password) {
 					alert("비밀번호를 입력하세요");
-					return false;
+					return;
 				}
 				
 				// AJAX
@@ -68,7 +68,7 @@
 				let params = $(this).serialize();	// name 속성이 반드시 있어야 함
 				console.log(params);
 				
-				$.post(url, params)	// reauest (세미콜론 X)
+				$.post(url, data)	// reauest (세미콜론 X)
 				.done(function(data) {	// response
 					
 					if(data.code == 200) {
@@ -81,25 +81,9 @@
 						alert(data.errorMessage);
 						
 					}
-					
 				});
 				
-				
 			});
-			
-			
-			
-			
-			
-			
-			
 		});
-	
-	
-	
-	
-	
-	
-	
 	
 	</script>
