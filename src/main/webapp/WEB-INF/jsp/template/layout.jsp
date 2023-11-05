@@ -25,11 +25,8 @@
 		</header>
 		
 		
-		<section class="contents">
-		
+		<section class="contents my-5">
 			<jsp:include page="../${viewName }.jsp" />
-		
-		
 		</section>
 	
 		
