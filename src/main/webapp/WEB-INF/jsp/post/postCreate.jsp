@@ -11,7 +11,8 @@
     		<textarea id="content" class="form-control mt-3" rows="10" placeholder="내용을 입력하세요"></textarea>
     		
     		<div class="d-flex justify-content-end my-4">	<!-- my : margin 위에서 좀 뗄 때 -->
-    			<input type="file" id="file">
+    			<input type="file" id="file" accept=".jpg, .jpeg, .png, .gif">	
+    				<%-- accept는 파일 업로드 선택 시 내가 설정한 파일 형식만 뜨도록 설정, 이 외에 모든 파일 선택 시 다른 확장자도 선택 가능함 --%>
     		</div>
     		
     		<div class="d-flex justify-content-between mb-4">
@@ -55,6 +56,10 @@
     			// alert("클릭");
     			let subject = $('#subject').val().trim();	// trim() : 앞 뒤 여백 제거
     			let content = $('#content').val();
+    			let fileName = $('#file').val();	// 파일 경로(임시 파일로 저장이 됨) : C:\fakepath\짱아코.jpg
+    			
+    			// alert(file);
+    			
     			
     			// validation check
     			if (!subject) {
@@ -67,11 +72,33 @@
     				return;
     			}
 				
+				
+				// 파일이 업로드 된 경우에만 확장자 체크
+				if (fileName) {
+					
+					// alert("파일이 있다");
+					// C:\fakepath\짱아코.jpg
+					// 확장자만 뽑은 후 소문자로 변경한다
+					let ext = fileName.split(".").pop().toLowerCase();	// split으로 사진 저장 경로에서 분리 => '.jpg' 분리
+														// pop : 가장 위에 있는 값을 뽑아낸다 (stack의 맨 마지막 순서라고 생각하면 됨 (LIFO))
+					
+					// alert(ext); => 선택한 이미지 파일의 형식 확인  ex) jpg, jpeg
+					
+					
+					if ($.inArray(ext, ['jpg', 'jpeg', 'png', 'gif']) == -1) {	// 이미지를 찾을 수 없을 때
+						alert("이미지 파일만 업로드 할 수 있습니다");
+						$('#file').val("");		// 파일을 비운다
+						return;
+					}
+				}
+				
+				
 				// request param 구성
 				// 이미지를 업로드 할 때는 반드시 form 태그가 있어야한다
 				let formData = new FormData();
 				formData.append("subject", subject);	// key는 form 태그의 name 속성과 같고, request parameter 명이 된다
 				formData.append("content", content);
+				formData.append("file", $('#file')[0].files[0]);	// 파일 가져올 때는 이 코드 써야함 (파일 한개 들고올 때)
 				
 				
     			
