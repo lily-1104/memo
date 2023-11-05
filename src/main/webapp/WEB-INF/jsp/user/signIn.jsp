@@ -43,12 +43,12 @@
 				
 				e.preventDefault();
 				
-				alert("클릭");
+				// alert("클릭");
 				
 				
 				// validation
 				let loginId = $('#loginId').val().trim();
-				let password = #('#password').val();
+				let password = $('#password').val();
 				
 				if (!loginId) {
 					alert("아이디를 입력하세요");
@@ -68,7 +68,7 @@
 				let params = $(this).serialize();	// name 속성이 반드시 있어야 함
 				console.log(params);
 				
-				$.post(url, data)	// reauest (세미콜론 X)
+				$.post(url, params)	// reauest (세미콜론 X)
 				.done(function(data) {	// response
 					
 					if(data.code == 200) {
