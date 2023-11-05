@@ -1,6 +1,6 @@
 package com.memo.post.domain;
 
-import java.time.ZonedDateTime;
+import java.util.Date;
 
 import lombok.Data;
 import lombok.ToString;
@@ -10,11 +10,17 @@ import lombok.ToString;
 public class Post {
 	
 	private int id;
+	
 	private String userId;
+	
 	private String subject;
+	
 	private String content;
+	
 	private String imagePath;
-	private ZonedDateTime createdAt;
-	private ZonedDateTime updatedAt;
+	
+	private Date createdAt;
+	
+	private Date updatedAt;
 	
 }
