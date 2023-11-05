@@ -24,16 +24,16 @@
     				<c:forEach items="${postList }" var="post">
     				<tr>
     					<td>${post.id }</td>
-    					<td>${post.subject }</td>
+    					<td><a href="/post/post-detail-view?postId=${post.id }">${post.subject }</a></td>
     					<td>
     						<%-- zonedDateTime -> Date -> String 순으로 변환해야함 --%>
-    						<fmt:parseDate value="${post.createdAt }" var="parsedCreatedAt" pattern="yyyy-MM-dd'T'HH:mm:ss" />
-    						<fmt:formatDate value="${parsedCreatedAt }" pattern="yyyy년 M월 d일 HH:mm:dd" />
+    						<%-- <fmt:parseDate value="${post.createdAt }" var="parsedCreatedAt" pattern="yyyy-MM-dd'T'HH:mm:ss" /> --%>
+    						<fmt:formatDate value="${post.createdAt }" pattern="yyyy년 M월 d일 HH:mm:dd" />
     					</td>
     					
     					<td>
-    						<fmt:parseDate value="${post.updatedAt }" var="parsedUpdatedAt" pattern="yyyy-MM-dd'T'HH:mm:ss" />
-    						<fmt:formatDate value="${parsedUpdatedAt }" pattern="yyyy년 M월 d일 HH:mm:dd" />
+    						<%-- <fmt:parseDate value="${post.updatedAt }" var="parsedUpdatedAt" pattern="yyyy-MM-dd'T'HH:mm:ss" /> --%>
+    						<fmt:formatDate value="${post.updatedAt }" pattern="yyyy년 M월 d일 HH:mm:dd" />
     					</td>
     				</tr>
     				</c:forEach>
@@ -46,19 +46,5 @@
     		
     		</div>
     	
-    	
-    	
-    	
-    	
-    	
-    	
     	</div>
-    
-    
-    
-    
-    
-    
-    
-    
     </div>

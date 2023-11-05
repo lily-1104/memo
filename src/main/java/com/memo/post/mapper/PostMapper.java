@@ -31,9 +31,10 @@ public interface PostMapper {
 	
 	
 	
-	
-	
-	// 글 작성 화면
+	// 글 상세 화면
+	public Post selectPostByPostIdAndUserId(
+			@Param("postId") int postId, 
+			@Param("userId") int userId);
 	
 	
 }

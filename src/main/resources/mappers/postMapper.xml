@@ -67,5 +67,26 @@
 	
 	
 	
+	<!-- 글 상세 화면 -->
+	<select id="selectPostByPostIdAndUserId" parameterType="map" resultType="com.memo.post.domain.Post">
+	
+		SELECT
+			`id`
+			, `userId`
+			, `subject`
+			, `content`
+			, `imagePath`
+			, `createdAt`
+			, `updatedAt`
+		
+		FROM
+			`post`
+		
+		WHERE
+			`userId` = #{userId}
+			AND `id` = #{postId}	<!-- post 테이블의 id니까 `id`만 작성해야함 -->
+	
+	</select>
+	
 	
 </mapper>
