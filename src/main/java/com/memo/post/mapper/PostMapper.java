@@ -37,4 +37,14 @@ public interface PostMapper {
 			@Param("userId") int userId);
 	
 	
+	
+	// 글 수정 API
+	public void updatePostByPostIdUserId(
+			@Param("postId") int postId, 
+			@Param("userId") int userId, 
+			@Param("subject") String subject, 
+			@Param("content") String content, 
+			@Param("imagePath") String imagePath);
+	
+	
 }
