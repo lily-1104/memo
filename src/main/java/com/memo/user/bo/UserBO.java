@@ -53,12 +53,4 @@ public class UserBO {
 	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
 }

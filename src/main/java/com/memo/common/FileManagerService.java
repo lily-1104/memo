@@ -73,7 +73,7 @@ public class FileManagerService {
 	
 	
 	// 이미지 삭제
-	// imput : imagePath / output : X
+	// input : imagePath / output : X
 	public void deleteFile(String imagePath) {	 // imagePath : /images/aaaaa_1698923969256/짱아코.jpg
 		
 		// C:\\Users\\User\\Desktop\\개발\\5_Spring_Project 2023\\memo\\workspace\\images/

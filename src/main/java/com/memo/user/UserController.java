@@ -30,7 +30,7 @@ public class UserController {
 	
 	
 	/**
-	 * 로그인
+	 * 로그인 화면
 	 * @param model
 	 * @return
 	 */
