@@ -25,7 +25,7 @@
     		</div>
     		
     		<div class="d-flex justify-content-between">
-    			<button type="button" id="deleteBtn" class="btn btn-secondary">삭제</button>
+    			<button type="button" id="deleteBtn" class="btn btn-secondary" data-post-id="${post.id }">삭제</button>
     				<!-- 버튼에 마우스 올렸을 때 버튼 타입으로하면 주소 안뜸, a 태그는 주소 뜸 -->
     			
     			<div class="d-flex">
@@ -125,6 +125,41 @@
     				}
     			});
 				
+    		});
+    	
+    		
+    		// 글 삭제
+    		$("#deleteBtn").on("click", function() {
+    			
+    			let postId = $(this).data("post-id");
+    			// alert(postId);
+    			
+    			$.ajax({
+    				
+    				// request
+    				type:"delete"
+    				, url: "/post/delete"
+    				, data:{"postId":postId}
+    				
+    				// response
+    				, success:function(data) {
+    					
+    					if (data.code == 200) {
+    						
+    						alert("글이 삭제되었습니다");
+    						location.href= "/post/post-list-view";
+    						
+    					} else {
+    						
+    						alert(data.errorMessage);
+    					}
+    				}
+    				, error:function(request, status, error) {
+    					
+    					alert("글을 삭제하는데 실패했습니다");
+    				}
+    			});
+    			
     		});
     	});
     

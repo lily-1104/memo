@@ -15,7 +15,6 @@ import com.memo.post.mapper.PostMapper;
 @Service
 public class PostBO {
 	
-	
 	private Logger logger = LoggerFactory.getLogger(this.getClass());	// slf4j 인터페이스로 임포트
 												// this : 해당 클래스 자신 (PostBO)
 		// 임포트 후 LoggerFactory.getLogger(this.getClass()) 여기에 빨간줄 뜨면 위의 임포트 항목 중 org.mybatis.logging.LoggerFactory; 삭제 후 다시 임포트
@@ -106,5 +105,33 @@ public class PostBO {
 		
 	}
 	
+	
+	
+	// 글 삭제 API
+	// input : 삭제할 글 번호, 글쓴이 번호 / output : X
+	public void deletePostByPostIdUserId(int postId, int userId) {
+		
+		// 기존 글 가져옴 (기존 이미지가 있으면 삭제해야해서)
+		Post post = postMapper.selectPostByPostIdAndUserId(postId, userId);
+		
+		if (post == null) {
+			
+			logger.info("[글 삭제] post가 null. postId:{}", postId, userId);
+			
+			return;
+		}
+		
+		// 기존 이미지가 존재하면 삭제
+		if (post.getImagePath() != null) {
+			
+			fileManager.deleteFile(post.getImagePath());
+			
+		}
+		
+		// DB 삭제
+		postMapper.deletePostByPostIdUserId(postId, userId);
+		
+		
+	}
 	
 }
