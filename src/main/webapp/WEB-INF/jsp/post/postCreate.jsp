@@ -100,7 +100,6 @@
 				formData.append("content", content);
 				formData.append("file", $('#file')[0].files[0]);	// 파일 가져올 때는 이 코드 써야함 (파일 한개 들고올 때)
 				
-				
     			
     			// AJAX
     			$.ajax({
@@ -136,4 +135,5 @@
     		});
     		
     	});
+    	
     </script>

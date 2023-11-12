@@ -11,7 +11,7 @@ public class Post {
 	
 	private int id;
 	
-	private String userId;
+	private int userId;
 	
 	private String subject;
 	

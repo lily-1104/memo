@@ -58,7 +58,7 @@ public class FileManagerService {
 		} catch (IOException e) {
 			
 			logger.error("[이미지 업로드] 업로드 실패 loginId:{}, filePath:{}", loginId, filePath);
-			e.printStackTrace();
+			// e.printStackTrace();
 			return null;	// 이미지 업로드 실패 시 null로 리턴
 		}
 		
