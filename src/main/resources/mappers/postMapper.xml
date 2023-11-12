@@ -33,9 +33,47 @@
 		
 		WHERE
 			`userId` = #{userId}
+			
+			<!-- paging -->
+			<if test="direction == 'next'">
+			<![CDATA[
+			AND `id` < #{standardId}	
+			]]>
+			ORDER BY `id` DESC
+			</if>
+			
+			<if test="direction == 'prev'">
+			<![CDATA[
+			AND `id` > #{standardId}
+			]]>
+			ORDER BY `id` ASC
+			</if>
+			
+			<if test="direction == null">
+			ORDER BY `id` DESC
+			</if>
 		
-		ORDER BY `id` DESC
+		LIMIT ${limit}	 <!-- #{}을 쓰면 db에서 따옴표를 쓰는 걸로 인식함, LIMIT은 따옴표 있으면 안됨, ${}은 숫자로 인식 -->
 	
+	</select>
+	
+	
+	<!-- paging - 이전 페이지의 마지막인가? -->
+	<select id="selectPostIdByUserIdAndSort" parameterType="map" resultType="int">
+	
+		SELECT
+			`id`
+		
+		FROM
+			`post`
+		
+		WHERE
+			`userId` = #{userId}
+		
+		ORDER BY `id` ${sort}
+		
+		LIMIT 1
+		
 	</select>
 	
 	

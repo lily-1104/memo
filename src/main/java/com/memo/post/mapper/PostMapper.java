@@ -18,7 +18,17 @@ public interface PostMapper {
 	
 	
 	// 게시글 리스트
-	public List<Post> selectPostListByUserId(int userId);
+	public List<Post> selectPostListByUserId(
+			@Param("userId") int userId, 
+			@Param("direction") String direction,	// paging
+			@Param("standardId") Integer standardId,	// paging, standardId는 null 일 수 있음
+			@Param("limit") int limit);		// paging
+	
+	
+	// paging - 이전 페이지의 마지막인가?
+	public int selectPostIdByUserIdAndSort(
+			@Param("userId") int userId,
+			@Param("sort") String sort);
 	
 	
 	
