@@ -42,10 +42,10 @@
     		
     		<%-- paging --%>
     		<div class="text-center">
-    			<c:if text="${prevId ne 0 }">	<!-- ne = != -->
+    			<c:if test="${prevId ne 0 }">	<!-- ne = != -->
     				<a href="/post/post-list-view?prevId=${prevId }" class="mr-5">&lt;&lt; 이전</a>		<%-- &lt; : 왼쪽 꺽쇠 --%>
     			</c:if> 
-    			<c:if text="${nextId ne 0 }">
+    			<c:if test="${nextId ne 0 }">
     				<a href="/post/post-list-view?nextId=${nextId }">다음 &gt;&gt;</a>		<%-- &gt; : 오른쪽 꺽쇠 --%>
     			</c:if> 
     		</div>
